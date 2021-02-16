@@ -12,13 +12,21 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "student")
 public class Student implements Serializable {
-	private long id;
-	private String Name, RollNo, Department, Result;
-	private float Pointer;
+	/**
+	 * serial ID added
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@Column(name = "Id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+
+	@Column(name = "Name")
+	private String Name;
+	private String RollNo, Department, Result;
+	private float Pointer;
+
 	public long getId() {
 		return id;
 	}
@@ -27,7 +35,6 @@ public class Student implements Serializable {
 		this.id = id;
 	}
 
-	@Column(name = "Name")
 	public String getName() {
 		return Name;
 	}

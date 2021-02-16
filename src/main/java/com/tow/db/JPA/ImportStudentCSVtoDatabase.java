@@ -38,11 +38,11 @@ public class ImportStudentCSVtoDatabase {
 		strategy.setType(Student.class);
 		strategy.setColumnMapping(mapping);
 
-		// Create castobaen and csvreader object
+		// Create cast-bean and csv reader object
 		CSVReader csvReader = null;
 		try {
 			csvReader = new CSVReader(new FileReader(
-					"H:\\WorkSpace_Eclipse3\\Java-JPA-Stream\\src\\main\\java\\com\\tow\\db\\JPA\\StudentData.csv"));
+					"H:\\WorkSpace_Eclipse3\\Java-JPA-Hibernate\\src\\main\\java\\com\\tow\\db\\data\\StudentData.csv"));
 		} catch (FileNotFoundException e) {
 
 			// TODO Auto-generated catch block
@@ -62,12 +62,12 @@ public class ImportStudentCSVtoDatabase {
 		return list;
 	}
 
-	@Test // CSV reader to a list of class Students
+//	@Test // CSV reader to a list of class Students
 	public void runCSVReadTest() {
 		System.out.println(CSVtoStudentObject());
 	}
 
-//	@Test
+	@Test
 	public void runCSV2DB() {
 
 		setupDB();

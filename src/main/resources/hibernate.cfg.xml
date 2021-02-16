@@ -12,10 +12,11 @@
     <property name="show_sql">true</property>
     
     <!-- Enable this to generate tables from Entity classes. But not for production. -->
-    <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+    <property name="hibernate.hbm2ddl.auto">update</property>
         
     <mapping class="com.tow.db.JPA.model.Book" />
     <mapping class="com.tow.db.JPA.model.Student" />
+    <mapping class="com.tow.db.JPA.model.Customer" />
      
   </session-factory>
 </hibernate-configuration>
