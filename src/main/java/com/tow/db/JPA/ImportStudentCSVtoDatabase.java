@@ -1,7 +1,9 @@
 package com.tow.db.JPA;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,11 +40,17 @@ public class ImportStudentCSVtoDatabase {
 		strategy.setType(Student.class);
 		strategy.setColumnMapping(mapping);
 
+		
+//		Load resource data from Resources directory 
+		String fileName = "data/StudentData.csv";
+		URL url = getClass().getClassLoader().getResource(fileName);
+		File file = new File(url.getPath());
 		// Create cast-bean and csv reader object
 		CSVReader csvReader = null;
 		try {
-			csvReader = new CSVReader(new FileReader(
-					"H:\\WorkSpace_Eclipse3\\Java-JPA-Hibernate\\src\\main\\java\\com\\tow\\db\\data\\StudentData.csv"));
+//			csvReader = new CSVReader(new FileReader(
+//					"H:\\WorkSpace_Eclipse3\\Java-JPA-Hibernate\\src\\main\\java\\com\\tow\\db\\data\\StudentData.csv"));
+			csvReader = new CSVReader(new FileReader(file));
 		} catch (FileNotFoundException e) {
 
 			// TODO Auto-generated catch block

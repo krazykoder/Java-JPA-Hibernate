@@ -1,7 +1,9 @@
 package com.tow.db.JPA;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URL;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -23,7 +25,11 @@ public class ImportCustomersFromCSV {
 
 	public List<Customer> CSVtoCustomerObject2() throws IOException {
 
-		String fileName = "H:\\WorkSpace_Eclipse3\\Java-JPA-Hibernate\\src\\main\\java\\com\\tow\\db\\data\\customerDBSample.csv";
+//		String fileName = "H:\\WorkSpace_Eclipse3\\Java-JPA-Hibernate\\src\\main\\java\\com\\tow\\db\\data\\customerDBSample.csv";
+		String fileName = "data/customerDBSample.csv";
+		URL url = getClass().getClassLoader().getResource(fileName);
+		File file = new File(url.getPath());
+		
 		List<Customer> beans = new CsvToBeanBuilder(new FileReader(fileName)).withType(Customer.class).build().parse();
 
 //		beans.forEach(System.out::println);
@@ -33,7 +39,10 @@ public class ImportCustomersFromCSV {
 
 	public List<CustomerTemp> CSVtoCustomerObject() throws IOException {
 
-		String fileName = "H:\\WorkSpace_Eclipse3\\Java-JPA-Hibernate\\src\\main\\java\\com\\tow\\db\\data\\customerDBSample.csv";
+//		String fileName = "H:\\WorkSpace_Eclipse3\\Java-JPA-Hibernate\\src\\main\\java\\com\\tow\\db\\data\\customerDBSample.csv";
+		String fileName = "data/customerDBSample.csv";
+		URL url = getClass().getClassLoader().getResource(fileName);
+		File file = new File(url.getPath());
 		List<CustomerTemp> beans = new CsvToBeanBuilder(new FileReader(fileName)).withType(CustomerTemp.class).build()
 				.parse();
 

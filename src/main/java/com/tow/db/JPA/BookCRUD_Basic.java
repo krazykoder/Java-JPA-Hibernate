@@ -97,10 +97,10 @@ public class BookCRUD_Basic {
 		BookCRUD_Basic manager = new BookCRUD_Basic();
 		manager.setup();
 
-//		manager.create();
+		manager.create();
 
-		manager.read();
-		manager.update();
+//		manager.read();
+//		manager.update();
 //		manager.delete();
 
 		manager.exit();
