@@ -51,10 +51,9 @@ public class CustomersFromCSV2DB {
 
 		return beans;
 	}
-	
-	
+
 //	@Test
-	// load a file from resource directory using classLoader 
+	// load a file from resource directory using classLoader
 	public void fileloader() {
 		String fileName = "data/customerDBSample.csv";
 		URL url = getClass().getClassLoader().getResource(fileName);
@@ -62,7 +61,7 @@ public class CustomersFromCSV2DB {
 		File file = new File(url.getPath());
 		System.out.println(file.getAbsolutePath() + " " + file.getName());
 	}
-	
+
 	@Test
 	public void CreateUpdateData() throws IOException {
 		// use persistence.xml configuration
