@@ -13,6 +13,7 @@
         <class>com.tow.db.JPA.model.Customer</class>
         <class>com.tow.db.JPA.model.Student</class>
         <class>com.tow.db.JPA.model.CustomerTemp</class>
+        <class>com.tow.db.JPA.model.MCQ</class>
         <properties>
             <!-- Configuring The Database Connection Details -->
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />

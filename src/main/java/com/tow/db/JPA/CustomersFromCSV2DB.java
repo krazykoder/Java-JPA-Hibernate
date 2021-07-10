@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
-import java.net.URLClassLoader;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -47,7 +46,7 @@ public class CustomersFromCSV2DB {
 		List<CustomerTemp> beans = new CsvToBeanBuilder(new FileReader(file)).withType(CustomerTemp.class).build()
 				.parse();
 
-//		beans.forEach(System.out::println);
+		beans.forEach(System.out::println);
 
 		return beans;
 	}
@@ -63,6 +62,11 @@ public class CustomersFromCSV2DB {
 	}
 
 	@Test
+	public void justRun() throws IOException {
+		List<CustomerTemp> custlist1 = CSVtoCustomerObject();
+	}
+
+//	@Test
 	public void CreateUpdateData() throws IOException {
 		// use persistence.xml configuration
 
