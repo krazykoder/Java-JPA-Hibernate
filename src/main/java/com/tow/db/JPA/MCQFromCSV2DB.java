@@ -23,7 +23,7 @@ public class MCQFromCSV2DB {
 
 	public List<MCQ> CSVtoMCQObject() throws IOException {
 
-		String fileName = "data/MCQDBSample.csv";
+		String fileName = "data/MCQDBSample3.csv";
 
 		URL url = getClass().getClassLoader().getResource(fileName);
 		File file = new File(url.getPath());
@@ -36,12 +36,12 @@ public class MCQFromCSV2DB {
 		return beans;
 	}
 
-//	@Test
+	@Test
 	public void justRun() throws IOException {
 		List<MCQ> custlist1 = CSVtoMCQObject();
 	}
 
-	@Test
+//	@Test
 	public void CreateUpdateData() throws IOException {
 		// use persistence.xml configuration
 

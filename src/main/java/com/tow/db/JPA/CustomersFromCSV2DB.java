@@ -61,12 +61,12 @@ public class CustomersFromCSV2DB {
 		System.out.println(file.getAbsolutePath() + " " + file.getName());
 	}
 
-	@Test
+//	@Test
 	public void justRun() throws IOException {
 		List<CustomerTemp> custlist1 = CSVtoCustomerObject();
 	}
 
-//	@Test
+	@Test
 	public void CreateUpdateData() throws IOException {
 		// use persistence.xml configuration
 
