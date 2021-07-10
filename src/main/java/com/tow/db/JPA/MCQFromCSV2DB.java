@@ -16,14 +16,14 @@ import org.junit.Test;
 import com.opencsv.bean.CsvToBeanBuilder;
 import com.tow.db.JPA.model.MCQ;
 
-public class MCQFromCSV2DB2 {
+public class MCQFromCSV2DB {
 
 	// select ID, Question, Answer1, Answer2, Answer3, Answer4, Correct from
 	// questiondb where questiondb.Answer1 >0
 
 	public List<MCQ> CSVtoMCQObject() throws IOException {
 
-		String fileName = "data/MCQDBSample2.csv";
+		String fileName = "data/MCQDBSample.csv";
 
 		URL url = getClass().getClassLoader().getResource(fileName);
 		File file = new File(url.getPath());

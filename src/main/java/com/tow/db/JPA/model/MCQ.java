@@ -18,7 +18,9 @@ public class MCQ {
 	String Question;
 
 	@Column(length = 1000)
-	String Answer1, Answer2, Answer3, Answer4, Correct;
+	String Answer1, Answer2, Answer3, Answer4;
+
+	String Correct;
 
 	@Override
 	public String toString() {
