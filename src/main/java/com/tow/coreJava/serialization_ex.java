@@ -20,7 +20,7 @@ class A implements Serializable {
 	}
 }
 
-public class serialization {
+public class serialization_ex {
 	
 	@Test
 	public void mytest() throws IOException, ClassNotFoundException {
