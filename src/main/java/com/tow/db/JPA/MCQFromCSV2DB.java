@@ -36,12 +36,12 @@ public class MCQFromCSV2DB {
 		return beans;
 	}
 
-	@Test
+//	@Test
 	public void justRun() throws IOException {
 		List<MCQ> custlist1 = CSVtoMCQObject();
 	}
 
-//	@Test
+	@Test
 	public void CreateUpdateData() throws IOException {
 		// use persistence.xml configuration
 
