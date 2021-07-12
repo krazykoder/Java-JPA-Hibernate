@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import com.tow.libs.resourceManager;
 
 import org.junit.Test;
 
@@ -22,17 +23,20 @@ class A implements Serializable {
 
 public class serialization_ex {
 	
-	@Test
+	resourceManager res = new resourceManager(); 
+	
+	@Test		
 	public void mytest() throws IOException, ClassNotFoundException {
 		A a = new A(20, "GeeksForGeeks");
-
+		
+		String oname = res.getResourcePath(); 
 		// Serializing 'a'
-		FileOutputStream fos = new FileOutputStream("xyz.txt");
+		FileOutputStream fos = new FileOutputStream(oname+"xyz.txt");
 		ObjectOutputStream oos = new ObjectOutputStream(fos);
 		oos.writeObject(a);
 
 		// De-serializing 'a'
-		FileInputStream fis = new FileInputStream("xyz.txt");
+		FileInputStream fis = new FileInputStream(oname+"xyz.txt");
 		ObjectInputStream ois = new ObjectInputStream(fis);
 		A b = (A) ois.readObject(); // down-casting object
 
