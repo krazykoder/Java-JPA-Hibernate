@@ -1,4 +1,4 @@
-package com.tow.core.fiddles;
+package com.tow.coreJava;
 
 import org.junit.Test;
 
