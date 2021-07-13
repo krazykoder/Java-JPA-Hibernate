@@ -30,6 +30,7 @@ public class ImportCustomersFromCSV {
 		URL url = getClass().getClassLoader().getResource(fileName);
 		File file = new File(url.getPath());
 
+		@SuppressWarnings({ "unchecked", "rawtypes" })
 		List<Customer> beans = new CsvToBeanBuilder(new FileReader(file)).withType(Customer.class).build().parse();
 
 //		beans.forEach(System.out::println);
@@ -43,6 +44,7 @@ public class ImportCustomersFromCSV {
 		String fileName = "data/customerDBSample.csv";
 		URL url = getClass().getClassLoader().getResource(fileName);
 		File file = new File(url.getPath());
+		@SuppressWarnings({ "unchecked", "rawtypes" })
 		List<CustomerTemp> beans = new CsvToBeanBuilder(new FileReader(file)).withType(CustomerTemp.class).build()
 				.parse();
 
